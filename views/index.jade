@@ -1,5 +1,16 @@
+- var mongoose = require('mongoose');
+- mongoose.connect('mongodb://localhost/choreo_notebook');
+- let Dance = require('../models/dances.model');
+
 extends layout
 
 block content
   h1= title
   p Welcome to #{title}
+  - debugger;
+  h3 Dances
+  - var dances = Dance.find();
+    for name in dances
+      div.card
+        h4= name 
+    

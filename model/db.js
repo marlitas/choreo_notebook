@@ -1,2 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/choreo_notebook');
+const connection = mongoose.connect('mongodb://localhost/choreo_notebook');
+
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+})
